@@ -1,0 +1,21 @@
+{
+    "name": "Google Search",
+    "version": "1.0",
+    "description": "Google search stuff.",
+    "manifest_version": 2,
+    "icons": {
+      "256": "logo.png"
+    },
+    "background": {
+      "persistent": false,
+      "scripts": ["background.js"]
+    },
+    "permissions": ["http://*/*","https://*/*","https://*.google.fr/","https://*.google.com/","http://127.0.0.1:8080/", "activeTab"],
+    "browser_action": {
+      "default_icon": "logo.png"
+    },
+    "content_scripts": [{
+        "matches": ["https://*.google.fr/*","https://*.google.com/*"],
+        "js": ["index.js"]
+    }]
+  }
